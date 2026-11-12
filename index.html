@@ -1,0 +1,292 @@
+<title>KINAN CONTROL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Concept: a calm, ink-violet product page. One phone mockup does the selling; everything else stays quiet. */
+:root{
+  --bg:#0e0b1a; --surface:#171329; --surface-2:#1f1a36; --line:rgba(255,255,255,.09);
+  --fg:#f3f1fa; --muted:#a9a3c2; --accent:#9a87ff; --on-accent:#0e0b1a; --ok:#3ddc84; --danger:#ff6b6b;
+  --font-body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-display:"Space Grotesk","IBM Plex Sans Arabic",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.7;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-weight:600;line-height:1.35;margin:0;text-wrap:balance}
+h2{font-size:clamp(22px,3.4vw,30px)}
+.brand{font-family:var(--font-display);font-weight:700;letter-spacing:.14em;font-size:14px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+.lang{background:none;border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer}
+.lang:hover{border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:56px 0 48px}
+.hero h1{font-size:clamp(30px,5.2vw,50px)}
+.hero p.lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:34em;margin:16px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font:inherit;font-weight:500;font-size:15px;text-decoration:none;border:1px solid var(--line);color:var(--fg);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.note{color:var(--muted);font-size:13px;margin-top:12px}
+
+.phone{justify-self:center;width:min(292px,100%);background:#050508;border-radius:50px;padding:9px;position:relative;box-shadow:0 0 0 2px #3b3b42,0 0 0 4px #17171b}
+.phone::before,.phone::after{content:"";position:absolute;width:3px;background:#3b3b42;border-radius:2px}
+.phone::before{inset-inline-start:-6px;top:110px;height:44px}
+.phone::after{inset-inline-end:-6px;top:140px;height:70px}
+.screen{background:linear-gradient(170deg,#1a1233 0%,#2d1648 55%,#4a1a4f 100%);border-radius:42px;padding:12px 14px 16px;display:grid;gap:10px;position:relative;overflow:hidden;direction:rtl}
+.island{width:84px;height:24px;background:#000;border-radius:14px;margin:0 auto 2px}
+.sbar{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;padding:0 10px;margin-top:-26px;height:24px;direction:ltr}
+.sbar .ic{display:flex;gap:4px;align-items:center}
+.sbar .ic i{display:block;background:#fff;border-radius:2px}
+.sbar .ic i:nth-child(1){width:15px;height:8px;opacity:.9}
+.sbar .ic i:nth-child(2){width:11px;height:8px;opacity:.9}
+.sbar .ic i:nth-child(3){width:22px;height:10px;border-radius:3px}
+.hdr{display:flex;justify-content:space-between;margin-top:6px}
+.gc{display:flex;gap:5px}
+.gc b{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.13);display:block}
+.gcap{background:rgba(255,255,255,.13);border-radius:999px;display:flex;gap:7px;padding:0 9px;align-items:center;height:26px}
+.gcap b{width:9px;height:9px;border-radius:50%;background:#fff;opacity:.85;display:block}
+.ttl{display:flex;align-items:center;gap:9px}
+.ttl .lg{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#5b4bff,#c23a8a);display:block}
+.ttl b{font-size:19px;display:block;line-height:1.1}
+.ttl span{font-family:var(--font-display);font-size:7.5px;letter-spacing:.18em;color:#c9c2e6}
+.sec{font-size:14px;font-weight:600;margin-top:2px}
+.card2{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:8px;display:grid;gap:8px}
+.home{width:96px;height:4px;border-radius:2px;background:#fff;opacity:.8;margin:4px auto 0}
+.screen .top{display:flex;justify-content:space-between;align-items:baseline}
+.screen .top b{font-size:17px}
+.screen .top span{font-family:var(--font-display);font-size:9px;letter-spacing:.16em;color:var(--muted)}
+.thumb{height:92px;border-radius:14px;background:#2b1b6b;position:relative;overflow:hidden}
+.thumb i{position:absolute;width:18px;height:14px;border-radius:3px;background:#f2c14e;opacity:.9}
+.thumb i:nth-child(1){top:14px;left:16px}.thumb i:nth-child(2){top:14px;left:50px}.thumb i:nth-child(3){top:44px;left:16px}.thumb i:nth-child(4){top:44px;left:50px}
+.pcname{font-family:var(--font-display);font-weight:700;font-size:15px;direction:ltr;text-align:start}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:12px;padding:3px;font-size:12px;text-align:center}
+.seg span{padding:7px 0;border-radius:9px}.seg .on{background:var(--accent);color:var(--on-accent);font-weight:600}
+.go{background:#fff;color:#111;border-radius:12px;text-align:center;padding:9px;font-weight:600;font-size:14px}
+.power{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10px;text-align:center;color:var(--muted)}
+.power span{background:var(--surface-2);border-radius:10px;padding:8px 2px}
+.power .p1{color:var(--ok)}.power .p4{color:var(--danger)}
+
+
+.slides{position:relative;height:446px}
+.slide{position:absolute;inset:0;display:grid;align-content:start;gap:9px;opacity:0;transition:opacity .7s ease;pointer-events:none}
+.slide.on{opacity:1}
+.dots{display:flex;gap:6px;justify-content:center}
+.dots button{width:6px;height:6px;border-radius:3px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:18px;background:#fff}
+.back{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.13);display:grid;place-items:center;font-size:13px}
+.pg{display:flex;justify-content:space-between;align-items:center}
+.pg b{font-size:19px}
+.chip{justify-self:end;background:#a98bff;color:#1a1233;border-radius:999px;padding:4px 12px;font-family:var(--font-display);font-weight:700;font-size:11px;direction:ltr}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:rgba(255,255,255,.09);border-radius:14px;padding:8px 10px;font-size:10px;color:#cfc8ea}
+.stat b{display:block;font-family:var(--font-display);font-size:14px;color:#fff;margin:2px 0 5px;direction:ltr;text-align:start}
+.bar{height:5px;border-radius:3px;background:rgba(255,255,255,.18);overflow:hidden;direction:ltr}
+.bar i{display:block;height:100%;border-radius:3px}
+.rows{background:rgba(255,255,255,.09);border-radius:14px;padding:6px 10px;display:grid;gap:5px;font-size:10px}
+.rows div{display:flex;justify-content:space-between;gap:8px}
+.rows span:first-child{color:#cfc8ea}
+.rows span:last-child{direction:ltr;text-align:start;font-weight:500}
+.tabs2{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.09);border-radius:12px;padding:3px;font-size:11px;text-align:center}
+.tabs2 span{padding:7px 0;border-radius:9px}.tabs2 .on{background:#a98bff;color:#1a1233;font-weight:600}
+.tile{background:rgba(255,255,255,.09);border-radius:16px;padding:14px 8px;text-align:center;font-size:11px}
+.tile i{display:block;width:28px;height:22px;border:2px solid #fff;border-radius:5px;margin:0 auto 6px}
+.live{display:flex;align-items:center;gap:5px;font-size:10px;color:#cfc8ea}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--ok);display:block}
+
+.brandrow{display:inline-flex;align-items:center;gap:10px}
+.logo{width:30px;height:30px;display:block}
+.logo.sm{width:32px;height:32px}
+.chips{display:flex;gap:6px;font-size:10px}
+.chips span{background:rgba(255,255,255,.1);border-radius:999px;padding:5px 11px}
+.chips .on{background:#a98bff;color:#1a1233;font-weight:600}
+.flist{background:rgba(255,255,255,.09);border-radius:14px;padding:0 10px;overflow:hidden;height:268px}
+.fr{display:flex;align-items:center;gap:9px;height:29.5px;border-bottom:1px solid rgba(255,255,255,.1);font-size:10.5px}
+.fr:last-child{border-bottom:0}
+.fr .fi{width:17px;height:13px;border-radius:3px;background:#f6c667;flex:none}
+.fr .fi.f{width:13px;height:16px;background:#7db4f0;border-radius:3px}
+.fr .nm{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fr .nm small{display:block;font-size:8.5px;color:#cfc8ea;direction:ltr;text-align:start;line-height:1.1}
+.fr .ch{font-size:11px;color:#cfc8ea;flex:none}
+.fr .dl{width:12px;height:12px;border:1.5px solid #cfc8ea;border-radius:50%;flex:none}
+section{padding:44px 0;border-top:1px solid var(--line)}
+section>h2{margin-bottom:8px}
+section>p.sub{color:var(--muted);margin:0 0 26px;max-width:38em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{font-size:17px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 18px;counter-increment:s}
+.step::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-family:var(--font-display);font-weight:700;margin-bottom:10px}
+.step h3{font-size:17px}.step p{margin:4px 0 0;color:var(--muted);font-size:15px}
+
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.plan.hl{border-color:var(--accent)}
+.plan .tag{font-size:12px;color:var(--accent);font-weight:600}
+.plan .price{font-family:var(--font-display);font-size:30px;font-weight:700;margin:6px 0 2px;direction:ltr;text-align:start}
+.plan ul{margin:12px 0 0;padding-inline-start:18px;color:var(--muted);font-size:15px}
+.fine{color:var(--muted);font-size:13px;margin-top:14px}
+
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:500}
+details p{margin:8px 0 0;color:var(--muted);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:36px}.phone{order:2}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <nav>
+    <span class="brand brandrow"><svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#c026a3"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lgg)"/><rect x="9" y="10" width="22" height="15" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 30h8M20 25v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M18.5 13.5v8l2.2-1.9 1.5 3.3 1.6-.8-1.5-3.2 2.9-.3z" fill="#fff"/></svg>KINAN CONTROL</span>
+    <button class="lang" id="lang" type="button" aria-label="Language">EN</button>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1 class="t" data-en="Control your computer from your iPhone">تحكّم بكمبيوترك من جوالك</h1>
+      <p class="lead t" data-en="Live screen with sound, file transfer, computer info, and power controls. Built with a full Arabic interface.">شاشة مباشرة مع الصوت، ونقل الملفات، ومعلومات الكمبيوتر، والتشغيل والإطفاء، بواجهة عربية كاملة.</p>
+      <div class="cta">
+        <a class="btn primary" href="#how"><span class="t" data-en="Download for Windows">حمّل لويندوز</span></a>
+        <a class="btn" href="#how"><span class="t" data-en="App Store">App Store</span></a>
+      </div>
+      <p class="note t" data-en="Download links will be added at launch.">روابط التحميل تُضاف عند الإطلاق.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="island"></div>
+        <div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i></i></span></div>
+        <div class="slides" id="slides">
+          <div class="slide on">
+            <div class="hdr"><div class="gc"><b></b><b></b><b></b></div><div class="gcap"><b></b><b></b></div></div>
+            <div class="ttl"><svg class="logo sm" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#c026a3"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lgp)"/><rect x="9" y="10" width="22" height="15" rx="2.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 30h8M20 25v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M18.5 13.5v8l2.2-1.9 1.5 3.3 1.6-.8-1.5-3.2 2.9-.3z" fill="#fff"/></svg><div><b class="t" data-en="Devices">الأجهزة</b><span>KINAN CONTROL</span></div></div>
+            <div class="sec t" data-en="Saved devices">الأجهزة المحفوظة</div>
+            <div class="card2">
+              <div class="thumb"><i></i><i></i><i></i><i></i></div>
+              <div class="pcname">OFFICE-PC</div>
+              <div class="seg"><span class="t" data-en="Shared">مشترك</span><span class="on t" data-en="Private">خاص</span></div>
+              <div class="go t" data-en="Connect">اتصال</div>
+            </div>
+            <div class="card2">
+              <div class="sec t" data-en="Power controls">التحكم بالطاقة</div>
+              <div class="live"><i></i><span class="t" data-en="OFFICE-PC · online">OFFICE-PC · متصل</span></div>
+              <div class="power"><span class="p1 t" data-en="Power on">تشغيل</span><span class="t" data-en="Sleep">سكون</span><span class="t" data-en="Restart">إعادة</span><span class="p4 t" data-en="Shut down">إطفاء</span></div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="pg"><div class="back">&rsaquo;</div><b class="t" data-en="Computer info">معلومات الجهاز</b></div>
+            <div class="chip">OFFICE-PC</div>
+            <div class="two">
+              <div class="stat"><span class="t" data-en="Memory">الرام</span><b>8 GB / 16 GB</b><div class="bar"><i style="width:50%;background:#1fb37a"></i></div></div>
+              <div class="stat"><span class="t" data-en="Processor">المعالج</span><b>18%</b><div class="bar"><i style="width:18%;background:#3b8cf0"></i></div></div>
+            </div>
+            <div class="rows">
+              <div><span class="t" data-en="Processor">المعالج</span><span>Intel Core i7</span></div>
+              <div><span class="t" data-en="Graphics">كرت الشاشة</span><span>NVIDIA GeForce RTX</span></div>
+              <div><span class="t" data-en="System">النظام</span><span>Windows 11 Pro</span></div>
+              <div><span class="t" data-en="Displays">الشاشات</span><span>1</span></div>
+            </div>
+            <div class="stat"><span class="t" data-en="Storage · C:">المساحة · C:</span><b>120 GB free / 476 GB</b><div class="bar"><i style="width:75%;background:#8b7cf0"></i></div></div>
+            <div class="rows">
+              <div><span class="t" data-en="Uptime">مشغّل من</span><span class="t" data-en="5 h 20 m">5 س 20 د</span></div>
+              <div><span class="t" data-en="Network">الشبكة</span><span>192.168.1.20</span></div>
+              <div><span class="t" data-en="Connected now">متصل الحين</span><span class="t" data-en="Nobody">لا أحد</span></div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="pg"><div class="back">&rsaquo;</div><b class="t" data-en="File transfer">نقل الملفات</b></div>
+            <div class="chip">OFFICE-PC</div>
+            <div class="tabs2"><span class="t" data-en="To computer ↑">إلى الكمبيوتر ↑</span><span class="on t" data-en="From computer ↓">من الكمبيوتر ↓</span></div>
+            <div class="chips"><span class="on t" data-en="Desktop">سطح المكتب</span><span class="t" data-en="Downloads">التنزيلات</span><span class="t" data-en="Documents">المستندات</span></div>
+            <div class="flist"><div class="fr"><i class="fi"></i><span class="nm">Projects</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">Photos-2026</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">Work-Files</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">Invoices</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">Backup-Archive</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">Study-Notes</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">مشاريع العمل</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi"></i><span class="nm">صور الرحلة</span><span class="ch">&lsaquo;</span></div><div class="fr"><i class="fi f"></i><span class="nm">report.pdf<small>4.4 MB</small></span><i class="dl"></i></div><div class="fr"><i class="fi f"></i><span class="nm">presentation.pptx<small>12.1 MB</small></span><i class="dl"></i></div><div class="fr"><i class="fi f"></i><span class="nm">notes.zip<small>2.3 MB</small></span><i class="dl"></i></div></div>
+          </div>
+        </div>
+        <div class="dots" id="dots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button></div>
+        <div class="home"></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features">
+    <h2 class="t" data-en="What you can do">وش تقدر تسوي</h2>
+    <p class="sub t" data-en="Everything works from the phone you already carry.">كل شي يشتغل من الجوال اللي معك دائماً.</p>
+    <div class="grid">
+      <div class="card"><h3 class="t" data-en="Shared screen with sound">شاشة مشتركة مع الصوت</h3><p class="t" data-en="See what is on the computer right now and hear it too, while someone else keeps using it.">شوف اللي على الكمبيوتر الآن واسمع صوته، وغيرك يقدر يكمل استخدامه.</p></div>
+      <div class="card"><h3 class="t" data-en="Private session">جلسة خاصة</h3><p class="t" data-en="Work on a separate session and keep the computer's own screen locked.">اشتغل في جلسة مستقلة وشاشة الكمبيوتر الأصلية تبقى مقفولة.</p></div>
+      <div class="card"><h3 class="t" data-en="File transfer">نقل الملفات</h3><p class="t" data-en="Send files to the computer, or pick files from your Desktop, Downloads and Documents.">أرسل ملفات للكمبيوتر، أو اختر ملفات من سطح المكتب والتنزيلات والمستندات.</p></div>
+      <div class="card"><h3 class="t" data-en="Computer info">معلومات الكمبيوتر</h3><p class="t" data-en="Processor, memory, graphics, storage and live status in one page.">المعالج والذاكرة والكرت والتخزين وحالة التشغيل في صفحة واحدة.</p></div>
+      <div class="card"><h3 class="t" data-en="Power controls">التحكم بالطاقة</h3><p class="t" data-en="Turn on, sleep, restart or shut down the computer from anywhere.">شغّل الكمبيوتر أو نيّمه أو أعد تشغيله أو أطفئه.</p></div>
+      <div class="card"><h3 class="t" data-en="Arabic and English">عربي وإنجليزي</h3><p class="t" data-en="A full right-to-left interface, with built-in help in both languages.">واجهة كاملة من اليمين لليسار، ومساعدة مدمجة باللغتين.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2 class="t" data-en="How it works">كيف يعمل</h2>
+    <p class="sub t" data-en="Three steps, no network settings to type in.">ثلاث خطوات، بدون كتابة إعدادات شبكة.</p>
+    <div class="steps">
+      <div class="step"><h3 class="t" data-en="Install on your computer">ثبّت على الكمبيوتر</h3><p class="t" data-en="Install the Kinan app on Windows and open it.">ثبّت برنامج كنان على ويندوز وافتحه.</p></div>
+      <div class="step"><h3 class="t" data-en="Scan the code">امسح الرمز</h3><p class="t" data-en="Open the iPhone app and scan the QR code shown on the computer.">افتح تطبيق الآيفون وامسح رمز QR الظاهر على الكمبيوتر.</p></div>
+      <div class="step"><h3 class="t" data-en="Take control">تحكّم</h3><p class="t" data-en="Pick a device and connect in Shared or Private mode.">اختر الجهاز واتصل بالوضع المشترك أو الخاص.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2 class="t" data-en="Pricing">الأسعار</h2>
+    <p class="sub t" data-en="Shared mode is free on your home network. A subscription unlocks the rest.">الوضع المشترك مجاني داخل شبكتك، والاشتراك يفتح باقي الميزات.</p>
+    <div class="plans">
+      <div class="plan"><span class="tag t" data-en="Free">مجاني</span><div class="price t" data-en="$0">$0</div><ul><li class="t" data-en="Shared mode only">الوضع المشترك فقط</li><li class="t" data-en="Inside your network only">داخل الشبكة فقط</li></ul></div>
+      <div class="plan hl"><span class="tag t" data-en="Anywhere · yearly">من أي مكان · سنوي</span><div class="price">$29.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="Save 50% versus monthly">وفّر 50% عن الشهري</li></ul></div>
+      <div class="plan"><span class="tag t" data-en="Anywhere · monthly">من أي مكان · شهري</span><div class="price">$4.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="7-day free trial">تجربة مجانية 7 أيام</li></ul></div>
+    </div>
+    <p class="fine t" data-en="Launch prices are not final.">أسعار الإطلاق غير نهائية.</p>
+  </section>
+
+  <section id="faq">
+    <h2 class="t" data-en="Questions">أسئلة شائعة</h2>
+    <p class="sub"></p>
+    <details><summary class="t" data-en="Does it work on Windows Home?">هل يعمل على Windows Home؟</summary><p class="t" data-en="Shared mode works on every edition. Private mode needs Windows Pro or higher.">الوضع المشترك يعمل على جميع الإصدارات، والوضع الخاص يتطلب Windows Pro أو أعلى.</p></details>
+    <details><summary class="t" data-en="What is the difference between Shared and Private?">ما الفرق بين المشترك والخاص؟</summary><p class="t" data-en="Shared mirrors the computer's own screen with sound. Private opens a separate session and locks the local screen.">المشترك يعرض شاشة الكمبيوتر نفسها مع الصوت، والخاص يفتح جلسة مستقلة ويقفل الشاشة الأصلية.</p></details>
+    <details><summary class="t" data-en="How do I turn on a computer that is off?">كيف أشغّل كمبيوتراً مطفأً؟</summary><p class="t" data-en="Power on uses Wake-on-LAN. Enable it in the BIOS and network adapter settings.">التشغيل يستخدم Wake-on-LAN، ويلزم تفعيله من إعدادات BIOS وكرت الشبكة.</p></details>
+    <details><summary class="t" data-en="Is my connection encrypted?">هل الاتصال مشفّر؟</summary><p class="t" data-en="Full end-to-end encryption is being added before the official release.">جارٍ إضافة التشفير الكامل قبل الإطلاق الرسمي.</p></details>
+  </section>
+
+  <footer>
+    <span>© KINAN CONTROL</span>
+    <span><a href="privacy.html"><span class="t" data-en="Privacy">الخصوصية</span></a> · <a href="terms.html"><span class="t" data-en="Terms">الشروط</span></a> · <span class="t" data-en="Support">الدعم</span></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.t'));
+  els.forEach(function(e){e.setAttribute('data-ar',e.textContent)});
+  var btn=document.getElementById('lang'),root=document.documentElement;
+  function set(l){
+    els.forEach(function(e){e.textContent=e.getAttribute(l==='en'?'data-en':'data-ar')});
+    root.lang=l;root.dir=l==='en'?'ltr':'rtl';
+    btn.textContent=l==='en'?'عربي':'EN';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved='ar';try{saved=localStorage.getItem('lang')||'ar'}catch(e){}
+  root.lang='ar';root.dir='rtl';
+  if(saved==='en')set('en');
+  btn.addEventListener('click',function(){set(root.lang==='en'?'ar':'en')});
+})();
+
+(function(){
+  var sl=[].slice.call(document.querySelectorAll('#slides .slide')),dt=[].slice.call(document.querySelectorAll('#dots button')),i=0,timer;
+  function show(n){i=n;sl.forEach(function(e,k){e.classList.toggle('on',k===n)});dt.forEach(function(e,k){e.classList.toggle('on',k===n)})}
+  function start(){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    clearInterval(timer);timer=setInterval(function(){show((i+1)%sl.length)},3800);
+  }
+  dt.forEach(function(b,k){b.addEventListener('click',function(){show(k);start()})});
+  start();
+})();
+</script>
