@@ -113,6 +113,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0
 .fr .nm small{display:block;font-size:8.5px;color:#cfc8ea;direction:ltr;text-align:start;line-height:1.1}
 .fr .ch{font-size:11px;color:#cfc8ea;flex:none}
 .fr .dl{width:12px;height:12px;border:1.5px solid #cfc8ea;border-radius:50%;flex:none}
+
+.about{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
+.about h3{font-size:18px;margin:0}
+.about p{margin:2px 0 0;color:var(--muted);font-size:15px}
 section{padding:44px 0;border-top:1px solid var(--line)}
 section>h2{margin-bottom:8px}
 section>p.sub{color:var(--muted);margin:0 0 26px;max-width:38em}
@@ -137,6 +142,9 @@ details{background:var(--surface);border:1px solid var(--line);border-radius:14p
 summary{cursor:pointer;font-weight:500}
 details p{margin:8px 0 0;color:var(--muted);font-size:15px}
 
+.warn{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-inline-start:4px solid var(--accent);border-radius:16px;padding:20px}
+.warn h3{margin:0 0 6px;font-size:18px}.warn>p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.warn ol{margin:0;padding-inline-start:20px;color:var(--fg);font-size:15px}.warn li{margin:4px 0}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
 @media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:36px}.phone{order:2}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -234,6 +242,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
       <div class="step"><h3 class="t" data-en="Scan the code">امسح الرمز</h3><p class="t" data-en="Open the iPhone app and scan the QR code shown on the computer.">افتح تطبيق الآيفون وامسح رمز QR الظاهر على الكمبيوتر.</p></div>
       <div class="step"><h3 class="t" data-en="Take control">تحكّم</h3><p class="t" data-en="Pick a device and connect in Shared or Private mode.">اختر الجهاز واتصل بالوضع المشترك أو الخاص.</p></div>
     </div>
+    <div class="warn" id="smartscreen">
+      <h3 class="t" data-en="Windows shows a blue warning when you open the installer?">يظهر لك تنبيه من ويندوز عند فتح ملف التثبيت؟</h3>
+      <p class="t" data-en="This is normal for new apps that Windows has not seen many times yet. The installer is safe to run. Follow these steps:">هذا طبيعي مع التطبيقات الجديدة التي لم يتعرّف عليها ويندوز بعد. ملف التثبيت آمن للتشغيل. اتبع الخطوات التالية:</p>
+      <ol>
+        <li class="t" data-en="On the warning screen, click “More info”." >في شاشة التنبيه اضغط <b>«مزيد من المعلومات»</b>.</li>
+        <li class="t" data-en="Click “Run anyway”.">ثم اضغط <b>«تشغيل على أي حال»</b>.</li>
+      </ol>
+      <p class="fine t" data-en="We are working on getting the installer digitally signed so this notice disappears.">نعمل على توقيع ملف التثبيت رقمياً حتى يختفي هذا التنبيه.</p>
+    </div>
   </section>
 
   <section id="pricing">
@@ -241,8 +258,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
     <p class="sub t" data-en="Shared mode is free on your home network. A subscription unlocks the rest.">الوضع المشترك مجاني داخل شبكتك، والاشتراك يفتح باقي الميزات.</p>
     <div class="plans">
       <div class="plan"><span class="tag t" data-en="Free">مجاني</span><div class="price t" data-en="$0">$0</div><ul><li class="t" data-en="Shared mode only">الوضع المشترك فقط</li><li class="t" data-en="Inside your network only">داخل الشبكة فقط</li></ul></div>
-      <div class="plan hl"><span class="tag t" data-en="Anywhere · yearly">من أي مكان · سنوي</span><div class="price">$29.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="Save 50% versus monthly">وفّر 50% عن الشهري</li></ul></div>
-      <div class="plan"><span class="tag t" data-en="Anywhere · monthly">من أي مكان · شهري</span><div class="price">$4.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="7-day free trial">تجربة مجانية 7 أيام</li></ul></div>
+      <div class="plan hl"><span class="tag t" data-en="Anywhere · yearly">من أي مكان · سنوي</span><div class="price">$29.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="Save 37% versus monthly">وفّر 37% عن الشهري</li></ul></div>
+      <div class="plan"><span class="tag t" data-en="Anywhere · monthly">من أي مكان · شهري</span><div class="price">$3.99</div><ul><li class="t" data-en="Private mode">الوضع الخاص</li><li class="t" data-en="Connect from anywhere">اتصال من أي مكان</li><li class="t" data-en="File transfer">نقل الملفات</li><li class="t" data-en="7-day free trial">تجربة مجانية 7 أيام</li></ul></div>
     </div>
     <p class="fine t" data-en="Launch prices are not final.">أسعار الإطلاق غير نهائية.</p>
   </section>
@@ -256,9 +273,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
     <details><summary class="t" data-en="Is my connection encrypted?">هل الاتصال مشفّر؟</summary><p class="t" data-en="Full end-to-end encryption is being added before the official release.">جارٍ إضافة التشفير الكامل قبل الإطلاق الرسمي.</p></details>
   </section>
 
+
   <footer>
     <span>© KINAN CONTROL</span>
-    <span><a href="privacy.html"><span class="t" data-en="Privacy">الخصوصية</span></a> · <a href="terms.html"><span class="t" data-en="Terms">الشروط</span></a> · <span class="t" data-en="Support">الدعم</span></span>
+    <span><a href="privacy.html"><span class="t" data-en="Privacy">الخصوصية</span></a> · <a href="terms.html"><span class="t" data-en="Terms">الشروط</span></a> · <a href="mailto:kinancontrol.help@outlook.sa"><span class="t" data-en="Support">الدعم</span></a></span>
   </footer>
 </div>
 
